@@ -4,7 +4,7 @@ export PGPASSWORD=$4
 psql -h $1 -U $2 -d $3 <<EOF
  \o $3_schemalist.txt
  \t on
- SELECT n.nspname FROM pg_catalog.pg_namespace n WHERE n.nspname !~ '^pg_' AND n.nspname <> 'information_schema' AND n.nspname <> 'jss_sys' AND n.nspname <> 'public';
+ SELECT n.nspname FROM pg_catalog.pg_namespace n WHERE n.nspname !~ '^pg_' AND n.nspname <> 'information_schema' AND n.nspname <> 'test' AND n.nspname <> 'public';
  \o
  \t off
 EOF
